@@ -32,7 +32,7 @@ const Upload = () => {
     formData.append('audio', audioFile)
 
     try {
-      const response = await axios.post('/songs/upload', formData, {
+      const response = await axios.post(`${API_URL}/songs/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         withCredentials: true,
       })

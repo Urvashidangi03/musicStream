@@ -6,6 +6,12 @@ dotenv.config(); // Load .env variables
 // Connect to MongoDB
 connectToDatabase();
 
+app.use(express.static('public'));
+
+app.get("*name",(req,res) => {
+  res.sendFile(__dirname + "/public/index.html");
+})
+
 // Use the Render-provided port or fallback to 3000
 const PORT = process.env.PORT || 3000;
 
